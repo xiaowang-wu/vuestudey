@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 双向数据绑定一般只用表单性的元素修改 -->
+    <!-- 用于展示数据的元素一般用单像数据绑定 ，data流向页面-->
+   <div class="doc">
+    <h1>
+    单向数据绑定 <input type="text" :value="name"> <br>
+    双向数据绑定 <input type="text" v-model:value="name">
+    <!-- v-model 默认接受的数据是value 因此v-model:value='name'可以简写为v-model='name'-->
+    </h1>
+</div>
+   
+</body>
+<script >
+    Vue.config.productionTip=false
+    new Vue({
+        el:'.doc',
+        data:{
+            name:'wyw',
+            school:{
+            name:'百度',
+            locate:'上海',
+            url:'https://www.baidu.com'
+        }
+        }
+        
+    })
+
+  
+</script>
+</html>

@@ -1,0 +1,14 @@
+{
+	"Vue": {
+		"prefix": "v",  //触发代码片段的关键词 输入vue按下tab回车键即可 可以更改！！
+		"body": [
+			"        new Vue({",
+			"            el: '',",
+			"            data: {",
+			"                  name:''",
+			"                  },",
+			"        });",
+		],
+		"description": "vh components"
+	}
+}

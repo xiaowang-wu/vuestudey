@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">{{name}}</div>
+    <script>
+    // const v=   new Vue({
+    //         // el: '#app',
+    //         data: {name:'dajshdk'},
+    //         methods: {}
+    //     });
+        const v=   new Vue({
+            // el: '#app',
+            data(){  //data()===data:function()  data 函数中必须返回一个对象
+                return{
+                    name:'dajshdk'
+                }
+                
+            },
+            methods: {}
+        });
+        console.log(v);
+        
+        setTimeout(()=>{
+        v.$mount('#app')
+        },1000)
+        // v.$mount('#app')
+        
+    </script>
+</body>
+
+</html>
