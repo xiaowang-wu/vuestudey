@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        姓：<input type="text" v-model="first"><br><br>
+        名：<input type="text" v-model="second"><br><br>
+        全名：<span>{{fullname}}</span><br><br>
+    </div>
+    <script>
+       const vm= new Vue({
+            el: '#app',
+            data: {
+                first:'zhang',
+                second:'san'
+            },
+            methods: {},
+            // computed:{
+            //    fullname:{
+            //     get(){
+            //         return this.first + '-' + this.second
+            //     },
+            //     set(value){
+            //         console.log(value);
+                    
+            //         const arr=value.split('-')
+            //         this.first=arr[0]
+            //         this.second=arr[1]
+            //     }
+            //    }
+        
+            // }
+            computed:{
+                fullname(){//fullname(){}===fullname:function(){} 此处默认为get 此计算属性没有set
+                    return this.first + '-' + this.second
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

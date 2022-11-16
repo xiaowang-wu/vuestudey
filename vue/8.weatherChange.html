@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+
+
+
+<!-- 由vue所管理得函数最好使用普通函数，此时this指针为vm 
+    不是由vue所管理的函数用箭头函数 如setimeout 这个函数得的管理者是页面一部控制块他的this是document ,应该用箭头函数（）=>{}，箭头函数
+没有自己的this需要向外边寻找 -->
+<body>
+    <div id="app">
+        <h2>今天天气很{{info}}</h2>
+        <button @click="weatherchange">切换</button>
+    </div>
+    <script>
+       const vm= new Vue({
+            el: '#app',
+            data: {
+                ishot:true,
+                numbre:{
+                    a:1,
+                    b:2
+                }
+            },
+            methods: {
+                weatherchange(){
+                    this.ishot=!this.ishot
+                }
+            },
+            computed:{
+                info(){
+                    return this.ishot ? '炎热':'凉爽'
+                }
+            },
+            //无配置属性时简写
+            // watch:{
+            //     ishot(newvalue,oldvalue){
+            //         console.log(newvalue,oldvalue);
+            //     }
+            // },
+            //有配置属性时
+            // watch:{
+            //     ishot:{//当ishot发生改变时被调用
+            //         handler(newvalue,oldvalue){
+            //             console.log(newvalue,oldvalue);
+                        
+            //         }
+            //     },
+            //     'numbre.a':{//监视多级属性中的值
+
+            //     },
+            //     number:{
+            //         deep:true, //监视number中的所有的属性改变
+            //         immediate:true//初始化是被调用
+            //     }
+            // }
+        });
+    //    vm.$watch('ishot', {
+    //     handler(newv,oldv){
+    //         console.log(newv,oldv);
+    //     }
+    //    });
+    //同上
+    vm.$watch('ishot',function(a,b){
+        console.log('11');
+        
+    })
+    </script>
+</body>
+
+</html>

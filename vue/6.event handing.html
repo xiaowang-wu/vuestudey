@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 事件修饰符：
+    1.prevent:阻止默认事件
+    2.stop:阻止事件冒泡
+    3.once: 事件触发一次
+    4.capture:使用事件的捕获模式
+    5.self:只有event.target是当前操作的元素时才触发此事件
+    6.passive：事件的默认行为立即执行
+    修饰符可以连写-->
+    <!-- <div class="app">
+        <button @click.once="show1">dfhg</button>
+    </div>
+    <div id="app">
+        <button @click="show1">111</button>
+        <button @click="show2($event,666)">222</button>  $event用于传递enevt事件 -->
+    <!-- </div>
+    <script>
+         new Vue({
+            el: '.app',
+            data: {
+                name:'wji'
+            },
+            methods: {
+                show1(){
+                    console.log('1111');
+                    console.log(this);    
+                },
+                show2(event,number){
+                    console.log(event,number);
+                }
+            }
+        }); -->
+         <!-- 常用键盘别名
+         回车enter
+         删除delete
+         退出esc
+         空格space
+         换行tab
+         上下左右 up down left right 
+        系统修饰键 ctrl alt shift meta
+        (1)配合keyup使用，按下修饰键再按其他键，松其他键触发事件
+        （2）配合keydown正常触发事件
+    Vue.config.keyCodes.自定义键名=键码 定制按键 -->
+         <div class="app">
+            <input type="text" placeholder="输入数据" @keydown.enter="show">
+         </div>
+             <script>
+                 new Vue({
+                     el: '.app',
+                     data: {},
+                     methods: {
+                        show(e){
+                            console.log(e.target.value);
+                            
+                        }
+                     }
+                 });
+             </script>
+    <!-- </script> -->
+</body>
+
+</html>
