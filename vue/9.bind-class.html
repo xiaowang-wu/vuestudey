@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<style>
+    .a{
+        width: 100px;
+        height: 100px;
+        border: 1px solid pink;
+    }
+    .b{
+        background-color: aqua;
+    }
+    .c{
+        background-color: aquamarine;
+        border-radius: 10%;
+    }
+    .d{
+        background-color: blue;
+    }
+</style>
+<body>
+    <div id="app">
+        <!-- 字符串写法 -->
+        <!-- <div class="a" :class="classlist" @click="change"></div> -->
+        <!-- <div class="a" :class="classlist" @click="change"></div> -->
+        <!-- 对象型 知道改变的值 -->
+        <div class="a" :class="classlist" @click="change"></div>
+
+    </div>
+    <script>
+      const v=  new Vue({
+            el: '#app',
+            data: {
+                classlist:{
+                    b:false,
+                    c:true,
+                    d:true
+                }
+            },
+            methods: {
+                //  change(){
+                //     //字符串改变
+                //     this.classlist='c'
+                //  }
+                // 随机变化class change(){
+                //     const arr=['c','d','b']
+                //     let index=Math.floor(Math.random()*3)
+                //     this.classlist=arr[index]
+                // }
+                //对象型改变
+                change(){
+                    this.classlist.d=false
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
